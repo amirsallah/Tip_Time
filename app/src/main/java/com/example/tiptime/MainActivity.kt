@@ -29,7 +29,11 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.N)
     fun calculateTip(){
-        val cost = findViewById<EditText?>(R.id.cost_of_service).text.toString().toDouble()
+        val cost = findViewById<EditText?>(R.id.cost_of_service).text.toString().toDoubleOrNull()
+        if (cost == null) {
+            findViewById<TextView>(R.id.tip_result).text = getString(R.string.tip_amount, "")
+            return
+        }
         val tipPercentage = when (findViewById<RadioGroup?>(R.id.tip_option).checkedRadioButtonId){
             R.id.option_eighteen_percent -> 0.18
             R.id.option_fifteen_percent -> 0.15
