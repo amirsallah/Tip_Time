@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        findViewById<TextView>(R.id.tip_result).text = getString(R.string.tip_amount, "$00:00")
+
         val button : Button = findViewById(R.id.button)
         button.setOnClickListener {
             calculateTip()
