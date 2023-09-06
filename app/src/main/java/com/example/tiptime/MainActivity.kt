@@ -2,50 +2,49 @@ package com.example.tiptime
 
 import android.icu.text.NumberFormat
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioGroup
-import android.widget.Switch
-import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import com.example.tiptime.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-        findViewById<TextView>(R.id.tip_result).text = getString(R.string.tip_amount, "$00:00")
-
-        val button : Button = findViewById(R.id.button)
-        button.setOnClickListener {
-            calculateTip()
-        }
+        binding.tipResult.text = getString(R.string.tip_amount, "$00.00")
+        binding.button.setOnClickListener { calculateTip() }
 
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    fun calculateTip(){
-        val cost = findViewById<EditText?>(R.id.cost_of_service).text.toString().toDoubleOrNull()
+    fun calculateTip() {
+        val cost = binding.costOfServiceEditText.text.toString().toDoubleOrNull()
+
         if (cost == null) {
-            findViewById<TextView>(R.id.tip_result).text = getString(R.string.tip_amount, "")
+            binding.tipResult.text = getString(R.string.tip_amount, "")
             return
         }
-        val tipPercentage = when (findViewById<RadioGroup?>(R.id.tip_option).checkedRadioButtonId){
+
+        val tipPercentage = when (binding.tipOption.checkedRadioButtonId) {
             R.id.option_eighteen_percent -> 0.18
             R.id.option_fifteen_percent -> 0.15
             else -> 0.20
         }
+
         var tip = cost * tipPercentage
-        val round = findViewById<Switch?>(R.id.round_up_switch).isChecked
+        val round = binding.roundUpSwitch.isChecked
 
         if (round)
             tip = kotlin.math.ceil(tip)
 
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
-        findViewById<TextView>(R.id.tip_result).text = getString(R.string.tip_amount, formattedTip)
+        binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/input"
@@ -7,8 +8,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cost_of_service"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,10 +19,32 @@
         android:hint="@string/cost_of_service"
         android:inputType="number|numberDecimal"
         android:minHeight="48dp"
-        android:textColorHint="#00796B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cost_of_service_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/cost_of_service"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/cost_of_service"-->
+<!--        android:inputType="number|numberDecimal"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColorHint="#00796B"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:autofillHints="" />-->
 
     <TextView
         android:id="@+id/service_question"
@@ -46,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/amazing_20"
-            android:textColor="#09504A" />
+            android:textColor="@color/green_blue" />
 
         <RadioButton
             android:id="@+id/option_eighteen_percent"
@@ -60,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ok_15"
-            android:textColor="#09504A" />
+            android:textColor="@color/green_blue" />
     </RadioGroup>
 
     <Switch
@@ -73,7 +97,7 @@
         android:checked="true"
         android:minHeight="48dp"
         android:text="@string/round_up_tip"
-        android:textColor="#09504A"
+        android:textColor="@color/green_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tip_option"
@@ -102,7 +126,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/tip_amount"
-        android:textColor="#09504A"
+        android:textColor="@color/green_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
