@@ -26,25 +26,11 @@
             android:id="@+id/cost_of_service_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:textColorHint="#8D6E63" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-<!--    <EditText-->
-<!--        android:id="@+id/cost_of_service"-->
-<!--        android:layout_width="160dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:ems="10"-->
-<!--        android:hint="@string/cost_of_service"-->
-<!--        android:inputType="number|numberDecimal"-->
-<!--        android:minHeight="48dp"-->
-<!--        android:textColorHint="#00796B"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:autofillHints="" />-->
 
     <TextView
         android:id="@+id/service_question"
@@ -87,7 +73,8 @@
             android:textColor="@color/green_blue" />
     </RadioGroup>
 
-    <Switch
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_up_switch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -98,10 +85,13 @@
         android:minHeight="48dp"
         android:text="@string/round_up_tip"
         android:textColor="@color/green_blue"
+        android:textColorHighlight="@color/green_blue"
+        android:textColorLink="@color/green_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tip_option"
         tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
 
     <Button
         android:id="@+id/button"

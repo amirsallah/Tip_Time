@@ -9,7 +9,7 @@ import com.example.tiptime.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.tipResult.text = getString(R.string.tip_amount, "$00.00")
+        //binding.costOfServiceEditText.setOnClickListener { calculateTip() }
         binding.button.setOnClickListener { calculateTip() }
 
     }
