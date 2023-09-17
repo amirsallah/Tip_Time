@@ -1,8 +1,12 @@
 package com.example.tiptime
 
+import android.content.Context
 import android.icu.text.NumberFormat
 import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tiptime.databinding.ActivityMainBinding
@@ -19,10 +23,23 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.tipResult.text = getString(R.string.tip_amount, "$00.00")
-        //binding.costOfServiceEditText.setOnClickListener { calculateTip() }
         binding.button.setOnClickListener { calculateTip() }
 
+        binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ -> handleKeyEvent(view, keyCode)
+        }
+
     }
+
+
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
+            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+            return true
+        }
+        return false
+    }
+
 
     @RequiresApi(Build.VERSION_CODES.N)
     fun calculateTip() {
