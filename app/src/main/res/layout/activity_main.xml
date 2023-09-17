@@ -9,7 +9,6 @@
         android:id="@+id/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
         tools:context=".MainActivity">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -30,8 +29,7 @@
                 android:id="@+id/cost_of_service_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:textColorHint="#8D6E63" />
+                android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,21 +58,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/amazing_20"
-                android:textColor="@color/green_blue" />
+                 />
 
             <RadioButton
                 android:id="@+id/option_eighteen_percent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/good_18"
-                android:textColor="#09504A" />
+                android:text="@string/good_18" />
 
             <RadioButton
                 android:id="@+id/option_fifteen_percent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/ok_15"
-                android:textColor="@color/green_blue" />
+                 />
         </RadioGroup>
 
 
@@ -88,7 +85,6 @@
             android:checked="true"
             android:minHeight="48dp"
             android:text="@string/round_up_tip"
-            android:textColor="@color/green_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/icon_round_up_tip"
             app:layout_constraintTop_toBottomOf="@+id/tip_option"
@@ -103,8 +99,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/calculate"
-            android:textColor="#0BF3DD"
-            app:backgroundTint="#105E68"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/round_up_switch"
             app:layout_constraintTop_toBottomOf="@+id/round_up_switch"
@@ -118,7 +112,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/tip_amount"
-            android:textColor="@color/green_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
 

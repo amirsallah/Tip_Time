@@ -2,8 +2,22 @@
 
     <!-- Application theme for dark theme. -->
     <style name="Theme.TipTime" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        ...
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#4edad5</item>
+        <item name="colorPrimaryContainer">#00504e</item>
+        <item name="colorOnPrimary">#003735</item>
+        <item name="colorOnPrimaryContainer">#6ff7f2</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#79da9f</item>
+        <item name="colorSecondaryContainer">#00522f</item>
+        <item name="colorOnSecondaryContainer">#95f7b9</item>
+        <item name="colorOnSecondary">#00391f</item>
+        <!--background color. -->
+        <item name="backgroundColor">#002022</item>
+        <item name="colorOnBackground">#70f5ff</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryContainer</item>
         <!-- Text input fields -->
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <!-- For radio buttons -->
