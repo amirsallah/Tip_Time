@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.tipResult.text = getString(R.string.tip_amount, "$00.00")
-        binding.button.setOnClickListener { calculateTip() }
+        binding.calculateButton.setOnClickListener { calculateTip() }
 
         binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ -> handleKeyEvent(view, keyCode)
         }
